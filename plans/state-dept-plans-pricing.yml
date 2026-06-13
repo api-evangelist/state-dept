@@ -1,0 +1,25 @@
+name: State Department API Plans
+description: >
+  The US Department of State Consular Affairs APIs are publicly available at no
+  cost. There is no formal tiered pricing model. Access to the travel advisory,
+  country travel information, and passport acceptance facility endpoints on
+  cadataapi.state.gov is open and requires no API key or registration. These
+  APIs are provided as a public service under standard US government open data
+  policies.
+plans:
+  - name: Open Public Access
+    description: >
+      Free, unauthenticated access to all Consular Affairs data APIs. No API
+      key required. Intended for public developers, researchers, and application
+      builders integrating US government travel and passport data.
+    url: https://cadataapi.state.gov/
+    price: 0
+    currency: USD
+    unit: request
+    authentication: None
+    features:
+      - Travel Advisories API (all countries)
+      - Country Travel Information API
+      - Passport Acceptance Facility Locations API
+      - Passport Issuance Statistics API
+      - GeoPolitical Area and Region Reference Data

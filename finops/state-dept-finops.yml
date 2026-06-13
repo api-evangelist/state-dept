@@ -1,0 +1,25 @@
+name: State Department API FinOps
+description: >
+  The US Department of State Consular Affairs APIs are funded through the
+  federal government budget and provided at no cost to consumers. There are no
+  usage-based charges, subscription fees, or metered billing for accessing
+  cadataapi.state.gov endpoints. Developers and organizations can integrate
+  these APIs into commercial and non-commercial applications without incurring
+  API usage costs. Infrastructure costs are borne entirely by the Department of
+  State as part of its mandate to provide public information on travel safety,
+  passport services, and consular affairs.
+cost_model: free
+currency: USD
+billing: none
+notes:
+  - All endpoints are free and open to the public.
+  - No API key, registration, or account required.
+  - No SLA or guaranteed uptime commitments are published.
+  - Data is provided under US government open data policies.
+  - Developers using this data for commercial applications bear no per-call cost.
+estimated_costs:
+  travel_advisories_api: $0.00
+  country_travel_information_api: $0.00
+  passport_acceptance_locations_api: $0.00
+  passport_issuance_statistics_api: $0.00
+  reference_data_api: $0.00

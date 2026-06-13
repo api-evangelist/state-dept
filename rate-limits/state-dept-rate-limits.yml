@@ -1,0 +1,27 @@
+name: State Department API Rate Limits
+description: >
+  The US Department of State Consular Affairs APIs (cadataapi.state.gov) do not
+  publish formal rate limits. The APIs are open public endpoints with no
+  authentication required. As federal government APIs, they are subject to
+  standard federal infrastructure constraints and reasonable use expectations.
+  Excessive automated scraping or abuse may result in IP-based blocking by
+  federal network security controls.
+limits:
+  - name: Public Unauthenticated
+    requests_per_second: unknown
+    requests_per_minute: unknown
+    requests_per_day: unknown
+    burst: unknown
+    notes: >
+      No documented rate limits. Public APIs hosted on federal infrastructure.
+      Developers should implement polite crawl delays and caching to avoid
+      overwhelming government servers. The Travel Advisories and Country Travel
+      Information endpoints are low-volume data feeds updated periodically and
+      do not require high-frequency polling.
+    headers:
+      - name: X-RateLimit-Limit
+        present: false
+      - name: X-RateLimit-Remaining
+        present: false
+      - name: Retry-After
+        present: false
