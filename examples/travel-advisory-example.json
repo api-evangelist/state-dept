@@ -1,0 +1,16 @@
+{
+  "Title": "Niger - Level 4: Do Not Travel",
+  "Link": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html",
+  "Category": ["NG"],
+  "Summary": "The U.S. State Department advises against all travel to Niger due to multiple critical threats. As of October 30, 2025, family members of U.S. government employees were authorized to depart due to safety concerns. The advisory cites crime, unrest, terrorism, kidnapping risks, and limited medical services as primary hazards. A state of emergency restricts movement across many regions, and military escorts are mandatory for foreigners traveling outside Niamey. U.S. government personnel must use armored vehicles, observe curfews, and avoid restaurants and markets. Terrorists actively plan kidnappings and attacks targeting vulnerable populations and U.S. interests in border regions, the Diffa Region, northern Agadez, and along the Niger-Benin pipeline corridor.",
+  "id": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html",
+  "Published": "2025-10-30T20:00:00-04:00",
+  "Updated": "2025-10-30T20:00:00-04:00",
+  "Advisory_Level": 4,
+  "Key_Risks": [
+    "Terrorism and kidnapping",
+    "Violent crime",
+    "Civil unrest",
+    "Limited medical services"
+  ]
+}

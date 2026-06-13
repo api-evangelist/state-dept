@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/state-dept/main/json-schema/country-travel-information.json",
+  "title": "CountryTravelInformation",
+  "description": "Comprehensive travel information for a country as published by the US Department of State",
+  "type": "object",
+  "properties": {
+    "tag": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "pattern": "^[A-Z]{2}$",
+      "description": "Two-letter ISO 3166-1 alpha-2 country code identifier",
+      "example": "AF"
+    },
+    "geopoliticalarea": {
+      "type": "string",
+      "description": "Full country or geopolitical area name",
+      "example": "Afghanistan"
+    },
+    "travel_transportation": {
+      "type": "string",
+      "description": "HTML-formatted content covering road conditions, aviation safety, traffic regulations, and transportation options"
+    },
+    "entry_exit_requirements": {
+      "type": "string",
+      "description": "HTML-formatted content detailing passport and visa requirements, dual nationality rules, and registration requirements"
+    },
+    "local_laws_and_special_circumstances": {
+      "type": "string",
+      "description": "HTML-formatted content on criminal penalties, religious restrictions, and laws affecting travelers including women and LGBTQ+ travelers"
+    },
+    "health": {
+      "type": "string",
+      "description": "HTML-formatted content on emergency medical services, hospital facilities, recommended vaccinations, and food and water safety"
+    },
+    "safety_and_security": {
+      "type": "string",
+      "description": "HTML-formatted content on terrorism threats, kidnapping risks, crime levels, civil demonstrations, and security conditions"
+    },
+    "destination_description": {
+      "type": "string",
+      "description": "HTML-formatted general description of the destination with link to State Department fact sheet"
+    },
+    "travel_embassyAndConsulate": {
+      "type": "string",
+      "description": "HTML-formatted embassy and consulate contact information including address, phone, and email"
+    },
+    "last_update_date": {
+      "type": "string",
+      "pattern": "^Last Updated: [A-Z][a-z]+ \\d{2}, \\d{4}$",
+      "description": "Date the record was last updated in the format 'Last Updated: Month DD, YYYY'",
+      "example": "Last Updated: April 02, 2026"
+    }
+  },
+  "required": ["tag", "geopoliticalarea"],
+  "examples": [
+    {
+      "tag": "AF",
+      "geopoliticalarea": "Afghanistan",
+      "travel_transportation": "<p>Road conditions are extremely poor throughout Afghanistan...</p>",
+      "entry_exit_requirements": "<p>A valid passport and visa are required to enter Afghanistan...</p>",
+      "local_laws_and_special_circumstances": "<p>Afghanistan is governed under strict Islamic law...</p>",
+      "health": "<p>Medical facilities in Afghanistan are extremely limited...</p>",
+      "safety_and_security": "<p>Afghanistan remains a high-risk environment due to terrorism...</p>",
+      "destination_description": "<p>For more information, see the <a href='https://www.state.gov/u-s-relations-with-afghanistan/'>State Department fact sheet</a>.</p>",
+      "travel_embassyAndConsulate": "<p>U.S. Embassy Kabul (operations suspended as of August 31, 2021)</p>",
+      "last_update_date": "Last Updated: April 02, 2026"
+    }
+  ]
+}

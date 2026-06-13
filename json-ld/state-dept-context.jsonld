@@ -1,0 +1,143 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "state": "https://cadataapi.state.gov/vocab#",
+    "travel": "https://travel.state.gov/vocab#",
+
+    "TravelAdvisory": "travel:TravelAdvisory",
+    "CountryTravelInformation": "travel:CountryTravelInformation",
+    "PassportLocation": "state:PassportLocation",
+
+    "Title": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "Link": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "Category": {
+      "@id": "travel:countryCode",
+      "@container": "@set"
+    },
+    "Summary": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "@id"
+    },
+    "Published": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:dateTime"
+    },
+    "Updated": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "Advisory_Level": {
+      "@id": "travel:advisoryLevel",
+      "@type": "xsd:integer"
+    },
+    "Key_Risks": {
+      "@id": "travel:keyRisk",
+      "@container": "@set"
+    },
+
+    "tag": {
+      "@id": "travel:countryTag",
+      "@type": "xsd:string"
+    },
+    "geopoliticalarea": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "travel_transportation": {
+      "@id": "travel:transportation",
+      "@type": "xsd:string"
+    },
+    "entry_exit_requirements": {
+      "@id": "travel:entryExitRequirements",
+      "@type": "xsd:string"
+    },
+    "local_laws_and_special_circumstances": {
+      "@id": "travel:localLaws",
+      "@type": "xsd:string"
+    },
+    "health": {
+      "@id": "travel:health",
+      "@type": "xsd:string"
+    },
+    "safety_and_security": {
+      "@id": "travel:safetyAndSecurity",
+      "@type": "xsd:string"
+    },
+    "destination_description": {
+      "@id": "travel:destinationDescription",
+      "@type": "xsd:string"
+    },
+    "travel_embassyAndConsulate": {
+      "@id": "travel:embassyAndConsulate",
+      "@type": "xsd:string"
+    },
+    "last_update_date": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:string"
+    },
+
+    "FacilityName": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "StreetAddress": {
+      "@id": "schema:streetAddress",
+      "@type": "xsd:string"
+    },
+    "City": {
+      "@id": "schema:addressLocality",
+      "@type": "xsd:string"
+    },
+    "ZipCode": {
+      "@id": "schema:postalCode",
+      "@type": "xsd:string"
+    },
+    "StateCode": {
+      "@id": "state:stateCode",
+      "@type": "xsd:string"
+    },
+    "State": {
+      "@id": "schema:addressRegion",
+      "@type": "xsd:string"
+    },
+    "PhoneNumber": {
+      "@id": "schema:telephone",
+      "@type": "xsd:string"
+    },
+    "Latitude": {
+      "@id": "schema:latitude",
+      "@type": "xsd:double"
+    },
+    "Longitude": {
+      "@id": "schema:longitude",
+      "@type": "xsd:double"
+    },
+    "FacilityTypeCode": {
+      "@id": "state:facilityTypeCode",
+      "@type": "xsd:string"
+    },
+    "FacilityType": {
+      "@id": "state:facilityType",
+      "@type": "xsd:string"
+    },
+    "EmailContact": {
+      "@id": "schema:email",
+      "@type": "xsd:string"
+    },
+    "HourComment": {
+      "@id": "schema:openingHours",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "vocabulary": {
+    "provider": "state-dept",
+    "name": "State Department Consular Affairs Vocabulary",
+    "description": "Domain terms and definitions used in the US Department of State Consular Affairs Data API",
+    "terms": [
+      {
+        "term": "Travel Advisory",
+        "definition": "An official US Department of State notice warning American citizens of safety and security conditions in foreign countries. Advisories are issued at four alert levels.",
+        "aliases": ["advisory", "travel warning", "travel alert"]
+      },
+      {
+        "term": "Advisory Level",
+        "definition": "The numeric risk classification assigned to a country travel advisory, ranging from 1 to 4.",
+        "values": [
+          {"level": 1, "label": "Exercise Normal Precautions", "description": "The lowest advisory level indicating normal safety and security concerns."},
+          {"level": 2, "label": "Exercise Increased Caution", "description": "Warns travelers to be aware of heightened risks such as political unrest or elevated crime rates."},
+          {"level": 3, "label": "Reconsider Travel", "description": "Advises travelers to reconsider travel due to serious risks to safety and security."},
+          {"level": 4, "label": "Do Not Travel", "description": "The highest advisory level recommending US citizens do not travel to the country due to life-threatening risks."}
+        ]
+      },
+      {
+        "term": "Consular Affairs",
+        "definition": "The bureau within the US Department of State responsible for protecting US citizens abroad, issuing passports and visas, and providing emergency assistance to Americans in foreign countries.",
+        "aliases": ["CA", "Bureau of Consular Affairs"]
+      },
+      {
+        "term": "cadataapi",
+        "definition": "The Consular Affairs Data API, the public API platform hosted at cadataapi.state.gov that provides open, unauthenticated access to travel advisories, country information, and passport facility data.",
+        "aliases": ["CA Data API", "Consular Affairs Data API"]
+      },
+      {
+        "term": "Passport Acceptance Facility",
+        "definition": "A location authorized by the US Department of State to accept passport applications on behalf of the federal government. Includes USPS post offices, courthouses, public libraries, and municipal government offices.",
+        "aliases": ["passport location", "acceptance facility", "passport office"]
+      },
+      {
+        "term": "FacilityTypeCode",
+        "definition": "A single-letter code identifying the type of passport acceptance facility.",
+        "values": [
+          {"code": "G", "label": "Postal", "description": "US Postal Service facility"},
+          {"code": "A", "label": "Court", "description": "Federal or state court facility"},
+          {"code": "E", "label": "Municipal", "description": "City or county government facility"},
+          {"code": "C", "label": "Library", "description": "Public library facility"}
+        ]
+      },
+      {
+        "term": "Country Tag",
+        "definition": "A two-letter ISO 3166-1 alpha-2 country code used to identify countries in the API (e.g., 'AF' for Afghanistan, 'FR' for France).",
+        "aliases": ["country code", "ISO country code", "tag"]
+      },
+      {
+        "term": "FRUS",
+        "definition": "Foreign Relations of the United States — a series of historical diplomatic records published by the State Department documenting US foreign policy decisions and negotiations. Available through a separate catalog API.",
+        "aliases": ["Foreign Relations of the United States"]
+      },
+      {
+        "term": "Geopolitical Area",
+        "definition": "A country, territory, or geopolitical region as recognized by the US Department of State for travel advisory and information purposes.",
+        "aliases": ["country", "territory", "region"]
+      },
+      {
+        "term": "Entry/Exit Requirements",
+        "definition": "The official passport, visa, and documentation requirements for entering and departing a country as established by that country's government and communicated by the US Department of State.",
+        "aliases": ["visa requirements", "passport requirements", "entry requirements"]
+      },
+      {
+        "term": "Travel Advisory Level 1",
+        "shorthand": "L1",
+        "definition": "Exercise Normal Precautions — the lowest advisory level, indicating normal safety and security risks comparable to travel within the United States."
+      },
+      {
+        "term": "Travel Advisory Level 2",
+        "shorthand": "L2",
+        "definition": "Exercise Increased Caution — advises travelers to be more attentive to their personal security due to heightened risks."
+      },
+      {
+        "term": "Travel Advisory Level 3",
+        "shorthand": "L3",
+        "definition": "Reconsider Travel — advises US citizens to reconsider travel to the country due to serious safety and security threats."
+      },
+      {
+        "term": "Travel Advisory Level 4",
+        "shorthand": "L4",
+        "definition": "Do Not Travel — the highest level, issued when life-threatening risks exist and the US government has limited ability to assist American citizens."
+      }
+    ]
+  }
+}

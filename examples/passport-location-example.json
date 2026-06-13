@@ -1,0 +1,47 @@
+[
+  {
+    "FacilityName": "USPS COLUMBIA MAIN POST OFFICE",
+    "StreetAddress": "6801 OAK HALL LANE",
+    "City": "COLUMBIA",
+    "ZipCode": "21045",
+    "StateCode": "MD",
+    "State": "MARYLAND",
+    "PhoneNumber": "4103814373",
+    "Latitude": 39.1843708,
+    "Longitude": -76.8208305,
+    "FacilityTypeCode": "G",
+    "FacilityType": "Postal",
+    "EmailContact": "21045COLUMBIAMD@USPS.GOV",
+    "HourComment": "No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm"
+  },
+  {
+    "FacilityName": "USPS WOODMOOR BRANCH POST OFFICE",
+    "StreetAddress": "110 WEST UNIVERSITY BOULEVARD",
+    "City": "SILVER SPRING",
+    "ZipCode": "20901",
+    "StateCode": "MD",
+    "State": "MARYLAND",
+    "PhoneNumber": "3015936819",
+    "Latitude": 39.0203048,
+    "Longitude": -77.0145359,
+    "FacilityTypeCode": "G",
+    "FacilityType": "Postal",
+    "EmailContact": "ROSIE.M.TAYLOR@USPS.GOV",
+    "HourComment": "By Appointment Only. Monday - Friday - 9:30AM - 3:15PM"
+  },
+  {
+    "FacilityName": "MONTGOMERY COUNTY DISTRICT COURT",
+    "StreetAddress": "191 EAST JEFFERSON STREET",
+    "City": "ROCKVILLE",
+    "ZipCode": "20850",
+    "StateCode": "MD",
+    "State": "MARYLAND",
+    "PhoneNumber": "#N/A",
+    "Latitude": 39.0826,
+    "Longitude": -77.1555,
+    "FacilityTypeCode": "A",
+    "FacilityType": "Court",
+    "EmailContact": "#N/A",
+    "HourComment": "By Appointment Only - Mon-Fri 8:30am-4:00pm"
+  }
+]

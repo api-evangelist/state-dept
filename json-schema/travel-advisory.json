@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/state-dept/main/json-schema/travel-advisory.json",
+  "title": "TravelAdvisory",
+  "description": "A country travel advisory issued by the US Department of State Consular Affairs Data API",
+  "type": "object",
+  "properties": {
+    "Title": {
+      "type": "string",
+      "description": "Advisory title including country name and warning level (e.g., 'Nigeria - Level 3: Reconsider Travel')",
+      "example": "Niger - Level 4: Do Not Travel"
+    },
+    "Link": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the full advisory page on travel.state.gov"
+    },
+    "Category": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 2,
+        "pattern": "^[A-Z]{2}$"
+      },
+      "description": "Array of two-letter ISO 3166-1 alpha-2 country codes associated with this advisory"
+    },
+    "Summary": {
+      "type": "string",
+      "description": "HTML-formatted summary of the advisory including risk categories such as crime, terrorism, health threats, civil unrest, and kidnapping"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the advisory, typically the same as the Link URL"
+    },
+    "Published": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the advisory was first published"
+    },
+    "Updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the last update to the advisory"
+    },
+    "Advisory_Level": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4,
+      "description": "Numeric alert level: 1=Exercise Normal Precautions, 2=Exercise Increased Caution, 3=Reconsider Travel, 4=Do Not Travel"
+    },
+    "Key_Risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of key risk categories associated with the advisory (returned for single-country queries)"
+    }
+  },
+  "required": ["Title", "Link", "Category", "Summary", "id", "Published", "Updated"],
+  "examples": [
+    {
+      "Title": "Niger - Level 4: Do Not Travel",
+      "Link": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html",
+      "Category": ["NG"],
+      "Summary": "The U.S. State Department advises against all travel to Niger due to multiple critical threats.",
+      "id": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html",
+      "Published": "2025-10-30T20:00:00-04:00",
+      "Updated": "2025-10-30T20:00:00-04:00",
+      "Advisory_Level": 4,
+      "Key_Risks": [
+        "Terrorism and kidnapping",
+        "Violent crime",
+        "Civil unrest",
+        "Limited medical services"
+      ]
+    }
+  ]
+}
