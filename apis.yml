@@ -10,7 +10,7 @@ description: >
   Additional historical diplomatic records are available through the Foreign
   Relations of the United States (FRUS) catalog API.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/state-dept/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -35,7 +35,7 @@ apis:
       Travel, Do Not Travel), country-specific travel information, passport
       acceptance facility locations searchable by ZIP code or state, and
       passport issuance statistics by fiscal and calendar year.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cadataapi.state.gov/
     baseURL: https://cadataapi.state.gov
     tags:
@@ -59,7 +59,7 @@ apis:
       publication date, last updated timestamp, and detailed HTML summary of
       risks including crime, terrorism, health threats, civil unrest, and
       kidnapping. Individual country advisories can be retrieved by country code.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/
     baseURL: https://cadataapi.state.gov
     tags:
