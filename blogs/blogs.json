@@ -2,11 +2,13 @@
   "repo": "state-dept",
   "feeds": [
     {
-      "source": "https://www.state.gov/blogs",
+      "source": "https://www.linkedin.com/company/statedept",
+      "feed_url": "https://www.linkedin.com/company/statedept",
+      "title": "",
       "saved": 0,
-      "error": "Technical Difficulties error page returned, no content"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T13:13:11Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
