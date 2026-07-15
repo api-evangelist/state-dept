@@ -75,6 +75,8 @@ apis:
       - FN: US Department of State Travel
         url: https://travel.state.gov/
 common:
+  - type: AgenticAccess
+    url: agentic-access/state-dept-agentic-access.yml
   - type: DomainSecurity
     url: security/state-dept-domain-security.yml
   - type: Website
