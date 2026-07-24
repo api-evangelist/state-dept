@@ -1,0 +1,153 @@
+openapi: 3.0.3
+info:
+  title: State Department Consular Affairs Data Country Information Travel Advisories API
+  description: Public REST API providing travel advisories for all countries, country travel information, and passport acceptance facility locations. The API is hosted at cadataapi.state.gov and requires no authentication.
+  version: 1.0.0
+  contact:
+    name: US Department of State Consular Affairs
+    url: https://travel.state.gov/
+  x-api-id: state-dept-consular-affairs
+  x-provider: state-dept
+servers:
+- url: https://cadataapi.state.gov
+  description: State Department Consular Affairs Data API
+tags:
+- name: Travel Advisories
+  description: Current US Department of State travel advisories for countries worldwide, with alert levels ranging from 1 (Exercise Normal Precautions) to 4 (Do Not Travel)
+paths:
+  /api/TravelAdvisories:
+    get:
+      operationId: getTravelAdvisories
+      summary: Get all travel advisories
+      description: Returns current travel advisories for all countries worldwide. Each advisory includes the country name, alert level (1-4), publication date, last updated timestamp, and detailed summary of risks including crime, terrorism, health threats, civil unrest, and kidnapping.
+      tags:
+      - Travel Advisories
+      responses:
+        '200':
+          description: Array of travel advisory objects for all countries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TravelAdvisory'
+              example:
+              - Title: 'Nigeria - Level 3: Reconsider Travel'
+                Link: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html
+                Category:
+                - NI
+                Summary: <p><b><i>Reconsider travel to Nigeria due to crime, terrorism, civil unrest, kidnapping, and maritime crime.</i></b></p>
+                id: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html
+                Published: '2026-06-11T20:00:00-04:00'
+                Updated: '2026-06-11T20:00:00-04:00'
+  /api/TravelAdvisories/{countryCode}:
+    get:
+      operationId: getTravelAdvisoryByCountry
+      summary: Get travel advisory by country code
+      description: Returns the current travel advisory for a specific country identified by its two-letter ISO country code. Includes alert level (1-4), risk summary, and key risk categories.
+      tags:
+      - Travel Advisories
+      parameters:
+      - name: countryCode
+        in: path
+        required: true
+        description: Two-letter ISO 3166-1 alpha-2 country code (e.g., NG for Nigeria, FR for France)
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 2
+          example: NG
+      responses:
+        '200':
+          description: Travel advisory for the specified country
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TravelAdvisoryDetail'
+              example:
+                Title: 'Niger - Level 4: Do Not Travel'
+                Link: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html
+                Category:
+                - NG
+                Summary: The U.S. State Department advises against all travel to Niger due to multiple critical threats.
+                id: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html
+                Published: '2025-10-30T20:00:00-04:00'
+                Updated: '2025-10-30T20:00:00-04:00'
+                Advisory_Level: 4
+                Key_Risks:
+                - Terrorism and kidnapping
+                - Violent crime
+                - Civil unrest
+                - Limited medical services
+components:
+  schemas:
+    TravelAdvisoryDetail:
+      allOf:
+      - $ref: '#/components/schemas/TravelAdvisory'
+      - type: object
+        description: Extended travel advisory with additional detail fields returned for single-country queries
+        properties:
+          Advisory_Level:
+            type: integer
+            minimum: 1
+            maximum: 4
+            description: 'Numeric alert level: 1=Exercise Normal Precautions, 2=Exercise Increased Caution, 3=Reconsider Travel, 4=Do Not Travel'
+            example: 4
+          Key_Risks:
+            type: array
+            items:
+              type: string
+            description: Array of key risk categories associated with the advisory
+            example:
+            - Terrorism and kidnapping
+            - Violent crime
+            - Civil unrest
+            - Limited medical services
+    TravelAdvisory:
+      type: object
+      description: A country travel advisory issued by the US Department of State
+      properties:
+        Title:
+          type: string
+          description: 'Advisory title including country name and warning level (e.g., ''Nigeria - Level 3: Reconsider Travel'')'
+          example: 'Nigeria - Level 3: Reconsider Travel'
+        Link:
+          type: string
+          format: uri
+          description: URL to the full advisory page on travel.state.gov
+          example: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html
+        Category:
+          type: array
+          items:
+            type: string
+            minLength: 2
+            maxLength: 2
+          description: Array of two-letter ISO country codes associated with this advisory
+          example:
+          - NI
+        Summary:
+          type: string
+          description: HTML-formatted summary of the advisory including risk categories such as crime, terrorism, health threats, civil unrest, and kidnapping
+          example: <p><b><i>Reconsider travel to Nigeria due to crime, terrorism, civil unrest, kidnapping, and maritime crime.</i></b></p>
+        id:
+          type: string
+          description: Unique identifier for the advisory, typically the same as the Link URL
+          example: https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html
+        Published:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp of when the advisory was first published
+          example: '2026-06-11T20:00:00-04:00'
+        Updated:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp of the last update to the advisory
+          example: '2026-06-11T20:00:00-04:00'
+      required:
+      - Title
+      - Link
+      - Category
+      - Summary
+      - id
+      - Published
+      - Updated

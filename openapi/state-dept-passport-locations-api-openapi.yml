@@ -1,0 +1,236 @@
+openapi: 3.0.3
+info:
+  title: State Department Consular Affairs Data Country Information Passport Locations API
+  description: Public REST API providing travel advisories for all countries, country travel information, and passport acceptance facility locations. The API is hosted at cadataapi.state.gov and requires no authentication.
+  version: 1.0.0
+  contact:
+    name: US Department of State Consular Affairs
+    url: https://travel.state.gov/
+  x-api-id: state-dept-consular-affairs
+  x-provider: state-dept
+servers:
+- url: https://cadataapi.state.gov
+  description: State Department Consular Affairs Data API
+tags:
+- name: Passport Locations
+  description: Passport acceptance facility locations across the United States, searchable by state, ZIP code, radius, or geographic coordinates
+paths:
+  /api/Passport/Applications/Locations:
+    get:
+      operationId: getAllPassportLocations
+      summary: Get all passport acceptance facility locations
+      description: Returns a list of all passport acceptance facility locations in the United States, including postal facilities, courts, municipal offices, and libraries. Each record includes address, contact information, geographic coordinates, and operating hours.
+      tags:
+      - Passport Locations
+      responses:
+        '200':
+          description: Array of passport acceptance facility location objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PassportLocation'
+  /api/Passport/Applications/Locations/States/{stateCode}:
+    get:
+      operationId: getPassportLocationsByState
+      summary: Get passport acceptance facility locations by state
+      description: Returns passport acceptance facility locations filtered by US state code. Each record includes facility name, address, contact information, geographic coordinates, facility type, and operating hours.
+      tags:
+      - Passport Locations
+      parameters:
+      - name: stateCode
+        in: path
+        required: true
+        description: Two-letter US state abbreviation (e.g., MD, CA, TX)
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 2
+          example: MD
+      responses:
+        '200':
+          description: Array of passport acceptance facility locations in the specified state
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PassportLocation'
+              example:
+              - FacilityName: USPS COLUMBIA MAIN POST OFFICE
+                StreetAddress: 6801 OAK HALL LANE
+                City: COLUMBIA
+                ZipCode: '21045'
+                StateCode: MD
+                State: MARYLAND
+                PhoneNumber: '4103814373'
+                Latitude: 39.1843708
+                Longitude: -76.8208305
+                FacilityTypeCode: G
+                FacilityType: Postal
+                EmailContact: 21045COLUMBIAMD@USPS.GOV
+                HourComment: No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm
+  /api/Passport/Applications/Locations/ZipCode/{zipcode}:
+    get:
+      operationId: getPassportLocationsByZipCode
+      summary: Get passport acceptance facility locations by ZIP code
+      description: Returns passport acceptance facility locations near a specified ZIP code.
+      tags:
+      - Passport Locations
+      parameters:
+      - name: zipcode
+        in: path
+        required: true
+        description: US ZIP code (5-digit)
+        schema:
+          type: string
+          pattern: ^[0-9]{5}$
+          example: '20901'
+      responses:
+        '200':
+          description: Array of passport acceptance facility locations near the specified ZIP code
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PassportLocation'
+  /api/Passport/Applications/Locations/ZipCode/{zipcode}/{miles}:
+    get:
+      operationId: getPassportLocationsByZipCodeAndRadius
+      summary: Get passport acceptance facility locations by ZIP code and radius
+      description: Returns passport acceptance facility locations within a specified radius (in miles) of a given ZIP code.
+      tags:
+      - Passport Locations
+      parameters:
+      - name: zipcode
+        in: path
+        required: true
+        description: US ZIP code (5-digit)
+        schema:
+          type: string
+          pattern: ^[0-9]{5}$
+          example: '20901'
+      - name: miles
+        in: path
+        required: true
+        description: Search radius in miles
+        schema:
+          type: integer
+          minimum: 1
+          example: 25
+      responses:
+        '200':
+          description: Array of passport acceptance facility locations within the specified radius
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PassportLocation'
+  /api/Passport/Applications/Locations/GeoLocation/{geolocation}:
+    get:
+      operationId: getPassportLocationsByGeoLocation
+      summary: Get passport acceptance facility locations by geographic coordinates
+      description: Returns passport acceptance facility locations near specified geographic coordinates (latitude,longitude).
+      tags:
+      - Passport Locations
+      parameters:
+      - name: geolocation
+        in: path
+        required: true
+        description: Geographic coordinates as 'latitude,longitude' (e.g., 38.9072,-77.0369)
+        schema:
+          type: string
+          example: 38.9072,-77.0369
+      responses:
+        '200':
+          description: Array of passport acceptance facility locations near the specified coordinates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PassportLocation'
+components:
+  schemas:
+    PassportLocation:
+      type: object
+      description: A passport acceptance facility location in the United States
+      properties:
+        FacilityName:
+          type: string
+          description: Official name of the passport acceptance facility. May contain '#N/A' if data is unavailable.
+          example: USPS COLUMBIA MAIN POST OFFICE
+        StreetAddress:
+          type: string
+          description: Physical street address of the facility
+          example: 6801 OAK HALL LANE
+        City:
+          type: string
+          description: City where the facility is located
+          example: COLUMBIA
+        ZipCode:
+          type: string
+          description: US postal code of the facility
+          example: '21045'
+        StateCode:
+          type: string
+          description: Two-letter US state abbreviation
+          example: MD
+        State:
+          type: string
+          description: Full US state name
+          example: MARYLAND
+        PhoneNumber:
+          type: string
+          description: Contact phone number. May contain '#N/A' if data is unavailable.
+          example: '4103814373'
+        Latitude:
+          type: number
+          format: double
+          description: Geographic latitude coordinate of the facility
+          example: 39.1843708
+        Longitude:
+          type: number
+          format: double
+          description: Geographic longitude coordinate of the facility
+          example: -76.8208305
+        FacilityTypeCode:
+          type: string
+          description: 'Single-letter code indicating facility type: G=Postal, A=Court, E=Municipal, C=Library'
+          enum:
+          - G
+          - A
+          - E
+          - C
+          example: G
+        FacilityType:
+          type: string
+          description: Human-readable facility type category
+          enum:
+          - Postal
+          - Court
+          - Municipal
+          - Library
+          example: Postal
+        EmailContact:
+          type: string
+          format: email
+          description: Contact email address for the facility
+          example: 21045COLUMBIAMD@USPS.GOV
+        HourComment:
+          type: string
+          description: Operating hours and appointment requirements for the facility
+          example: No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm
+      required:
+      - StreetAddress
+      - City
+      - ZipCode
+      - StateCode
+      - State
+      - Latitude
+      - Longitude
+      - FacilityTypeCode
+      - FacilityType
