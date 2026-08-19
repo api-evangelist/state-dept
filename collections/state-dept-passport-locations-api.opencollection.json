@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "State Department Consular Affairs Data Country Information Passport Locations API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Passport Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all passport acceptance facility locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/Passport/Applications/Locations"
+          },
+          "docs": "Returns a list of all passport acceptance facility locations in the United States, including postal facilities, courts, municipal offices, and libraries. Each record includes address, contact information, geographic coordinates, and operating hours."
+        },
+        {
+          "info": {
+            "name": "Get passport acceptance facility locations by state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/Passport/Applications/Locations/States/:stateCode",
+            "params": [
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "path",
+                "description": "Two-letter US state abbreviation (e.g., MD, CA, TX)"
+              }
+            ]
+          },
+          "docs": "Returns passport acceptance facility locations filtered by US state code. Each record includes facility name, address, contact information, geographic coordinates, facility type, and operating hours."
+        },
+        {
+          "info": {
+            "name": "Get passport acceptance facility locations by ZIP code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/Passport/Applications/Locations/ZipCode/:zipcode",
+            "params": [
+              {
+                "name": "zipcode",
+                "value": "",
+                "type": "path",
+                "description": "US ZIP code (5-digit)"
+              }
+            ]
+          },
+          "docs": "Returns passport acceptance facility locations near a specified ZIP code."
+        },
+        {
+          "info": {
+            "name": "Get passport acceptance facility locations by ZIP code and radius",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/Passport/Applications/Locations/ZipCode/:zipcode/:miles",
+            "params": [
+              {
+                "name": "zipcode",
+                "value": "",
+                "type": "path",
+                "description": "US ZIP code (5-digit)"
+              },
+              {
+                "name": "miles",
+                "value": "",
+                "type": "path",
+                "description": "Search radius in miles"
+              }
+            ]
+          },
+          "docs": "Returns passport acceptance facility locations within a specified radius (in miles) of a given ZIP code."
+        },
+        {
+          "info": {
+            "name": "Get passport acceptance facility locations by geographic coordinates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/Passport/Applications/Locations/GeoLocation/:geolocation",
+            "params": [
+              {
+                "name": "geolocation",
+                "value": "",
+                "type": "path",
+                "description": "Geographic coordinates as 'latitude,longitude' (e.g., 38.9072,-77.0369)"
+              }
+            ]
+          },
+          "docs": "Returns passport acceptance facility locations near specified geographic coordinates (latitude,longitude)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

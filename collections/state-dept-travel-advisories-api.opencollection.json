@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "State Department Consular Affairs Data Country Information Travel Advisories API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Travel Advisories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all travel advisories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/TravelAdvisories"
+          },
+          "docs": "Returns current travel advisories for all countries worldwide. Each advisory includes the country name, alert level (1-4), publication date, last updated timestamp, and detailed summary of risks including crime, terrorism, health threats, civil unrest, and kidnapping."
+        },
+        {
+          "info": {
+            "name": "Get travel advisory by country code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/TravelAdvisories/:countryCode",
+            "params": [
+              {
+                "name": "countryCode",
+                "value": "",
+                "type": "path",
+                "description": "Two-letter ISO 3166-1 alpha-2 country code (e.g., NG for Nigeria, FR for France)"
+              }
+            ]
+          },
+          "docs": "Returns the current travel advisory for a specific country identified by its two-letter ISO country code. Includes alert level (1-4), risk summary, and key risk categories."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

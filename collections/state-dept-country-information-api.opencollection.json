@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "State Department Consular Affairs Data Country Information API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Country Information",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get travel information for all countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/CountryTravelInformation"
+          },
+          "docs": "Returns detailed travel information for all countries, including transportation, entry/exit requirements, local laws, health guidance, safety and security advisories, destination descriptions, and embassy/consulate contact information. All content fields are HTML-formatted."
+        },
+        {
+          "info": {
+            "name": "Get travel information for a specific country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/CountryTravelInformation/:tag",
+            "params": [
+              {
+                "name": "tag",
+                "value": "",
+                "type": "path",
+                "description": "Two-letter country code (e.g., AF for Afghanistan, FR for France)"
+              }
+            ]
+          },
+          "docs": "Returns detailed travel information for a specific country identified by its two-letter country code tag. Includes transportation, entry/exit requirements, local laws, health guidance, safety and security advisories, destination descriptions, and embassy/consulate contact information."
+        },
+        {
+          "info": {
+            "name": "Get a specific field of travel information for a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cadataapi.state.gov/api/CountryTravelInformation/:tag/:field",
+            "params": [
+              {
+                "name": "tag",
+                "value": "",
+                "type": "path",
+                "description": "Two-letter country code"
+              },
+              {
+                "name": "field",
+                "value": "",
+                "type": "path",
+                "description": "Field name to retrieve (e.g., health, safety_and_security, entry_exit_requirements)"
+              }
+            ]
+          },
+          "docs": "Returns a specific field of travel information for a country identified by its two-letter code. Useful for retrieving only the relevant section (e.g., health, safety_and_security) without fetching the full record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

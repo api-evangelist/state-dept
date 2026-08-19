@@ -1,0 +1,508 @@
+{
+  "item": [
+    {
+      "id": "54fca62e-a84b-4b73-bc1f-f4b5968ba088",
+      "name": "Passport Locations",
+      "description": {
+        "content": "Passport acceptance facility locations across the United States, searchable by state, ZIP code, radius, or geographic coordinates",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39d27195-99b1-4121-aee5-9e5b336ae6c8",
+          "name": "Get all passport acceptance facility locations",
+          "request": {
+            "name": "Get all passport acceptance facility locations",
+            "description": {
+              "content": "Returns a list of all passport acceptance facility locations in the United States, including postal facilities, courts, municipal offices, and libraries. Each record includes address, contact information, geographic coordinates, and operating hours.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "Passport",
+                "Applications",
+                "Locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82571dac-2c6e-49da-aaa2-3ee26cc0a98e",
+              "name": "Array of passport acceptance facility location objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Passport",
+                    "Applications",
+                    "Locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  },\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "792f6975-927c-4672-98dd-1909816d7203",
+          "name": "Get passport acceptance facility locations by state",
+          "request": {
+            "name": "Get passport acceptance facility locations by state",
+            "description": {
+              "content": "Returns passport acceptance facility locations filtered by US state code. Each record includes facility name, address, contact information, geographic coordinates, facility type, and operating hours.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "Passport",
+                "Applications",
+                "Locations",
+                "States",
+                ":stateCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stateCode",
+                  "description": "(Required) Two-letter US state abbreviation (e.g., MD, CA, TX)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2dad8928-4883-4f7a-9fce-7b74e0daffa3",
+              "name": "Array of passport acceptance facility locations in the specified state",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Passport",
+                    "Applications",
+                    "Locations",
+                    "States",
+                    ":stateCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stateCode",
+                      "description": "(Required) Two-letter US state abbreviation (e.g., MD, CA, TX)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"PhoneNumber\": \"4103814373\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9020e251-63a6-4766-bca6-e72ba3f3be31",
+          "name": "Get passport acceptance facility locations by ZIP code",
+          "request": {
+            "name": "Get passport acceptance facility locations by ZIP code",
+            "description": {
+              "content": "Returns passport acceptance facility locations near a specified ZIP code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "Passport",
+                "Applications",
+                "Locations",
+                "ZipCode",
+                ":zipcode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "zipcode",
+                  "description": "(Required) US ZIP code (5-digit)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d78fc09-39d2-457a-a441-055542247f87",
+              "name": "Array of passport acceptance facility locations near the specified ZIP code",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Passport",
+                    "Applications",
+                    "Locations",
+                    "ZipCode",
+                    ":zipcode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "zipcode",
+                      "description": "(Required) US ZIP code (5-digit)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  },\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbab774e-89e1-4c6b-84a9-2dbee7399201",
+          "name": "Get passport acceptance facility locations by ZIP code and radius",
+          "request": {
+            "name": "Get passport acceptance facility locations by ZIP code and radius",
+            "description": {
+              "content": "Returns passport acceptance facility locations within a specified radius (in miles) of a given ZIP code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "Passport",
+                "Applications",
+                "Locations",
+                "ZipCode",
+                ":zipcode",
+                ":miles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "zipcode",
+                  "description": "(Required) US ZIP code (5-digit)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "miles",
+                  "description": "(Required) Search radius in miles"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffb46d8d-a5d7-499a-b7ee-4e9fa2e4fc4a",
+              "name": "Array of passport acceptance facility locations within the specified radius",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Passport",
+                    "Applications",
+                    "Locations",
+                    "ZipCode",
+                    ":zipcode",
+                    ":miles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "zipcode",
+                      "description": "(Required) US ZIP code (5-digit)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "miles",
+                      "description": "(Required) Search radius in miles"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  },\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2c25405-0a53-45ec-9fa4-8b3ddfd4052c",
+          "name": "Get passport acceptance facility locations by geographic coordinates",
+          "request": {
+            "name": "Get passport acceptance facility locations by geographic coordinates",
+            "description": {
+              "content": "Returns passport acceptance facility locations near specified geographic coordinates (latitude,longitude).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "Passport",
+                "Applications",
+                "Locations",
+                "GeoLocation",
+                ":geolocation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "geolocation",
+                  "description": "(Required) Geographic coordinates as 'latitude,longitude' (e.g., 38.9072,-77.0369)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03f97c56-4c65-4c03-ba70-2d53fedfe534",
+              "name": "Array of passport acceptance facility locations near the specified coordinates",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Passport",
+                    "Applications",
+                    "Locations",
+                    "GeoLocation",
+                    ":geolocation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geolocation",
+                      "description": "(Required) Geographic coordinates as 'latitude,longitude' (e.g., 38.9072,-77.0369)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  },\n  {\n    \"StreetAddress\": \"6801 OAK HALL LANE\",\n    \"City\": \"COLUMBIA\",\n    \"ZipCode\": \"21045\",\n    \"StateCode\": \"MD\",\n    \"State\": \"MARYLAND\",\n    \"Latitude\": 39.1843708,\n    \"Longitude\": -76.8208305,\n    \"FacilityTypeCode\": \"G\",\n    \"FacilityType\": \"Postal\",\n    \"FacilityName\": \"USPS COLUMBIA MAIN POST OFFICE\",\n    \"PhoneNumber\": \"4103814373\",\n    \"EmailContact\": \"21045COLUMBIAMD@USPS.GOV\",\n    \"HourComment\": \"No Appointment Necessary - Mon-Fri (8:00am -4:00pm) Sat 8:00am - 3:00pm\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cadataapi.state.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b248297b-92e1-44f4-9c0f-88a4ed045b43",
+    "name": "State Department Consular Affairs Data Country Information Passport Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API providing travel advisories for all countries, country travel information, and passport acceptance facility locations. The API is hosted at cadataapi.state.gov and requires no authentication.\n\nContact Support:\n Name: US Department of State Consular Affairs",
+      "type": "text/plain"
+    }
+  }
+}

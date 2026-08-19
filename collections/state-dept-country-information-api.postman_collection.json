@@ -1,0 +1,300 @@
+{
+  "item": [
+    {
+      "id": "c7db5e8c-eec6-48a9-b4bf-318c69da2912",
+      "name": "Country Information",
+      "description": {
+        "content": "Detailed country-specific travel information covering transportation, entry requirements, local laws, health, safety, and embassy contacts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1c21b5d1-bc96-44e9-b74e-80688077b623",
+          "name": "Get travel information for all countries",
+          "request": {
+            "name": "Get travel information for all countries",
+            "description": {
+              "content": "Returns detailed travel information for all countries, including transportation, entry/exit requirements, local laws, health guidance, safety and security advisories, destination descriptions, and embassy/consulate contact information. All content fields are HTML-formatted.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "CountryTravelInformation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2eaf2c58-2370-47f3-bf38-da12df686ce6",
+              "name": "Array of country travel information objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "CountryTravelInformation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"tag\": \"AF\",\n    \"geopoliticalarea\": \"Afghanistan\",\n    \"travel_transportation\": \"<p>Road conditions in Afghanistan are poor...</p>\",\n    \"entry_exit_requirements\": \"<p>A valid passport and visa are required to enter Afghanistan...</p>\",\n    \"local_laws_and_special_circumstances\": \"<p>Afghanistan is governed by Islamic law...</p>\",\n    \"health\": \"<p>Medical facilities in Afghanistan are limited...</p>\",\n    \"safety_and_security\": \"<p>Afghanistan remains a high-risk environment...</p>\",\n    \"destination_description\": \"<p>For more information, visit the <a href='...'>State Department fact sheet</a>...</p>\",\n    \"travel_embassyAndConsulate\": \"<p>U.S. Embassy Kabul (operations suspended as of August 31, 2021)</p>\",\n    \"last_update_date\": \"Last Updated: April 02, 2026\"\n  },\n  {\n    \"tag\": \"AF\",\n    \"geopoliticalarea\": \"Afghanistan\",\n    \"travel_transportation\": \"<p>Road conditions in Afghanistan are poor...</p>\",\n    \"entry_exit_requirements\": \"<p>A valid passport and visa are required to enter Afghanistan...</p>\",\n    \"local_laws_and_special_circumstances\": \"<p>Afghanistan is governed by Islamic law...</p>\",\n    \"health\": \"<p>Medical facilities in Afghanistan are limited...</p>\",\n    \"safety_and_security\": \"<p>Afghanistan remains a high-risk environment...</p>\",\n    \"destination_description\": \"<p>For more information, visit the <a href='...'>State Department fact sheet</a>...</p>\",\n    \"travel_embassyAndConsulate\": \"<p>U.S. Embassy Kabul (operations suspended as of August 31, 2021)</p>\",\n    \"last_update_date\": \"Last Updated: April 02, 2026\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f10656e-a2ea-43ff-bd60-0b1f7944a794",
+          "name": "Get travel information for a specific country",
+          "request": {
+            "name": "Get travel information for a specific country",
+            "description": {
+              "content": "Returns detailed travel information for a specific country identified by its two-letter country code tag. Includes transportation, entry/exit requirements, local laws, health guidance, safety and security advisories, destination descriptions, and embassy/consulate contact information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "CountryTravelInformation",
+                ":tag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tag",
+                  "description": "(Required) Two-letter country code (e.g., AF for Afghanistan, FR for France)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d908eee-bc6c-4c79-a2d4-840f79fb4972",
+              "name": "Country travel information for the specified country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "CountryTravelInformation",
+                    ":tag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tag",
+                      "description": "(Required) Two-letter country code (e.g., AF for Afghanistan, FR for France)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tag\": \"AF\",\n  \"geopoliticalarea\": \"Afghanistan\",\n  \"travel_transportation\": \"<p>Road conditions in Afghanistan are poor...</p>\",\n  \"entry_exit_requirements\": \"<p>A valid passport and visa are required to enter Afghanistan...</p>\",\n  \"local_laws_and_special_circumstances\": \"<p>Afghanistan is governed by Islamic law...</p>\",\n  \"health\": \"<p>Medical facilities in Afghanistan are limited...</p>\",\n  \"safety_and_security\": \"<p>Afghanistan remains a high-risk environment...</p>\",\n  \"destination_description\": \"<p>For more information, visit the <a href='...'>State Department fact sheet</a>...</p>\",\n  \"travel_embassyAndConsulate\": \"<p>U.S. Embassy Kabul (operations suspended as of August 31, 2021)</p>\",\n  \"last_update_date\": \"Last Updated: April 02, 2026\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d936b6ee-d74d-4b75-864f-38ac7526203b",
+          "name": "Get a specific field of travel information for a country",
+          "request": {
+            "name": "Get a specific field of travel information for a country",
+            "description": {
+              "content": "Returns a specific field of travel information for a country identified by its two-letter code. Useful for retrieving only the relevant section (e.g., health, safety_and_security) without fetching the full record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "CountryTravelInformation",
+                ":tag",
+                ":field"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tag",
+                  "description": "(Required) Two-letter country code"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "field",
+                  "description": "(Required) Field name to retrieve (e.g., health, safety_and_security, entry_exit_requirements)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7effa44f-acdf-4548-a1be-b0e47f414763",
+              "name": "Requested field value for the specified country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "CountryTravelInformation",
+                    ":tag",
+                    ":field"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tag",
+                      "description": "(Required) Two-letter country code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "field",
+                      "description": "(Required) Field name to retrieve (e.g., health, safety_and_security, entry_exit_requirements)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cadataapi.state.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0310aae2-651b-4294-87d2-fd79888da319",
+    "name": "State Department Consular Affairs Data Country Information API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API providing travel advisories for all countries, country travel information, and passport acceptance facility locations. The API is hosted at cadataapi.state.gov and requires no authentication.\n\nContact Support:\n Name: US Department of State Consular Affairs",
+      "type": "text/plain"
+    }
+  }
+}

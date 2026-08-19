@@ -1,0 +1,194 @@
+{
+  "item": [
+    {
+      "id": "975bede3-3236-431f-80cd-0b95ebd41199",
+      "name": "Travel Advisories",
+      "description": {
+        "content": "Current US Department of State travel advisories for countries worldwide, with alert levels ranging from 1 (Exercise Normal Precautions) to 4 (Do Not Travel)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1230dfad-2781-4faa-aca1-a57a15ee3f53",
+          "name": "Get all travel advisories",
+          "request": {
+            "name": "Get all travel advisories",
+            "description": {
+              "content": "Returns current travel advisories for all countries worldwide. Each advisory includes the country name, alert level (1-4), publication date, last updated timestamp, and detailed summary of risks including crime, terrorism, health threats, civil unrest, and kidnapping.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "TravelAdvisories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c876f586-a823-479f-8b21-9effedd554b7",
+              "name": "Array of travel advisory objects for all countries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "TravelAdvisories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Title\": \"Nigeria - Level 3: Reconsider Travel\",\n    \"Link\": \"https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html\",\n    \"Category\": [\n      \"NI\"\n    ],\n    \"Summary\": \"<p><b><i>Reconsider travel to Nigeria due to crime, terrorism, civil unrest, kidnapping, and maritime crime.</i></b></p>\",\n    \"id\": \"https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html\",\n    \"Published\": \"2026-06-11T20:00:00-04:00\",\n    \"Updated\": \"2026-06-11T20:00:00-04:00\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ddf9d71c-26ba-4ed8-875a-3ed63e30bfe3",
+          "name": "Get travel advisory by country code",
+          "request": {
+            "name": "Get travel advisory by country code",
+            "description": {
+              "content": "Returns the current travel advisory for a specific country identified by its two-letter ISO country code. Includes alert level (1-4), risk summary, and key risk categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "TravelAdvisories",
+                ":countryCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "countryCode",
+                  "description": "(Required) Two-letter ISO 3166-1 alpha-2 country code (e.g., NG for Nigeria, FR for France)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4be257d1-0257-4ca2-bc59-3e3fd028bc0d",
+              "name": "Travel advisory for the specified country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "TravelAdvisories",
+                    ":countryCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "countryCode",
+                      "description": "(Required) Two-letter ISO 3166-1 alpha-2 country code (e.g., NG for Nigeria, FR for France)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Title\": \"Niger - Level 4: Do Not Travel\",\n  \"Link\": \"https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html\",\n  \"Category\": [\n    \"NG\"\n  ],\n  \"Summary\": \"The U.S. State Department advises against all travel to Niger due to multiple critical threats.\",\n  \"id\": \"https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html\",\n  \"Published\": \"2025-10-30T20:00:00-04:00\",\n  \"Updated\": \"2025-10-30T20:00:00-04:00\",\n  \"Advisory_Level\": 4,\n  \"Key_Risks\": [\n    \"Terrorism and kidnapping\",\n    \"Violent crime\",\n    \"Civil unrest\",\n    \"Limited medical services\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cadataapi.state.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b03720b7-9a6b-4a0d-b6cc-b3a07973011c",
+    "name": "State Department Consular Affairs Data Country Information Travel Advisories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API providing travel advisories for all countries, country travel information, and passport acceptance facility locations. The API is hosted at cadataapi.state.gov and requires no authentication.\n\nContact Support:\n Name: US Department of State Consular Affairs",
+      "type": "text/plain"
+    }
+  }
+}
